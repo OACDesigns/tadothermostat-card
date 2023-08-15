@@ -1,4 +1,5 @@
-import { LitElement, html, customElement, property, CSSResultArray, TemplateResult, css } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResultGroup } from 'lit';
+import { customElement, property } from 'lit/decorators';
 import {
   HomeAssistant,
   hasAction,
@@ -25,7 +26,7 @@ export class TadothermostatCard extends LitElement {
   public static async getConfigElement(): Promise<LovelaceCardEditor> {
     return document.createElement('tadothermostat-card-editor') as LovelaceCardEditor;
   }
-  public static getStubConfig(): object {
+  public static getStubConfig(): Record<string, unknown> {
     return {};
   }
   // Cause element to re-render
@@ -145,7 +146,7 @@ export class TadothermostatCard extends LitElement {
           tempint = 0;
         }
       } catch (Error) {
-        console.log(Error.message);
+        console.log((Error as Error).message);
       }
       return tempint;
     } else {
@@ -156,7 +157,7 @@ export class TadothermostatCard extends LitElement {
           tempint = 0;
         }
       } catch (Error) {
-        console.log(Error.message);
+        console.log((Error as Error).message);
       }
       return tempint;
     }
@@ -179,7 +180,7 @@ export class TadothermostatCard extends LitElement {
         tempsmall = 0;
       }
     } catch (Error) {
-      console.log(Error.message);
+      console.log((Error as Error).message);
     }
     if (tempsmall >= 7) {
       templarge = templarge + 1;
@@ -219,7 +220,7 @@ export class TadothermostatCard extends LitElement {
     }
 
     let desired_value = '';
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion, @typescript-eslint/no-non-null-asserted-optional-chain
     if (key in stateObj?.attributes!) {
       desired_value = stateObj?.attributes[key];
     }
@@ -276,7 +277,7 @@ export class TadothermostatCard extends LitElement {
     `;
   }
 
-  static get styles(): CSSResultArray {
+  static get styles(): CSSResultGroup {
     return [style({ css })];
   }
 }
