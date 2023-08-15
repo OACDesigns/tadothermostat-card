@@ -18,7 +18,7 @@
     "@ctrl/tinycolor": "^2.6.0",
     "@thomasloven/round-slider": "^0.3.7",
     "card-tools": "github:thomasloven/lovelace-card-tools#master",
-    "custom-card-helpers": "^1.8.0",
+    "custom-card-helpers": "^1.7.2",
     "home-assistant-js-websocket": "^5.11.1",
     "lit": "^2.0.0"
   },
@@ -48,12 +48,7 @@
     "rollup-plugin-typescript2": "^0.30.0",
     "typescript": "^4.4.3"
   },
-  "resolutions": {
-    "lit": "^2.1.2",
-    "lit-html": "2.1.2",
-    "lit-element": "3.1.2",
-    "@lit/reactive-element": "1.2.1"
-  },
+
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"

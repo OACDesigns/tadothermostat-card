@@ -60,7 +60,7 @@ export default [
     input: 'src/tadothermostat-card.ts',
     output: {
       format: 'es',
-      file: 'dist/tadothermostat-card-dev.js',
+      file: 'dist/tadothermostat-card.js',
     },
     plugins: [...plugins],
   },
